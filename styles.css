@@ -7,4 +7,118 @@
     font-family: 'Varela Round';
     font-size: 18px;
     font-weight: 400;
+    color: #625E7C;
+}
+button {
+    cursor: pointer;
+}
+
+.wrapper {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(107.56deg, #69BCC8 0%, rgba(1, 41, 32) 100%);
+    overflow: hidden;
+}
+
+.screen {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.active {
+    transform: translateY(-100%);
+}
+
+.button__start {
+    padding: 10px 30px;
+    background: #000;
+    color: #625E7C;
+    font-size: 24px;
+    border-radius: 50px;
+    background: #1D1C22;
+    border: none;
+}
+
+.button {
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 414px;
+    padding: 25px 75px;
+    border-radius: 10px;
+    background: #1D1C22;
+}
+
+.title {
+    font-size: 24px;
+    color: #625E7C;
+}
+
+.form-block {
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+    margin: 50px 0 45px 0;
+}
+
+.form-block > *:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.form-block > *:first-child {
+    padding-top: 14px;
+}
+
+.input {
+    outline: none;
+    border: none;
+    width: 250px;
+    height: 50px;
+    padding: 14px 25px;
+    border-radius: 50px;
+    background: #282731;
+    color: #857FAA;
+}
+
+.input::placeholder {
+    color: #625E7C;
+}
+
+.input:focus {
+    background: #2F2D3A;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .10);
+}
+
+.button__calculate {
+    outline: none;
+    border: none;
+    width: 250px;
+    height: 50px;
+    padding: 14px 0;
+    border-radius: 50px;
+    background: #2A2738;
+    color: #857FAA;
+}
+
+.result {
+    display: flex;
+    justify-content: space-between;
+}
+
+.name {
+    min-width: 44px;
+}
+
+.value {
+    color: #857FAA;
 }
