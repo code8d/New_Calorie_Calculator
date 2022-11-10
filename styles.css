@@ -14,13 +14,17 @@ button {
 }
 
 .wrapper {
+    background: linear-gradient(107.56deg, #69BCC8 0%, rgba(1, 41, 32) 100%);
+    overflow: hidden;
+}
+
+.slider {
     position: relative;
     display: flex;
     flex-wrap: wrap;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(107.56deg, #69BCC8 0%, rgba(1, 41, 32) 100%);
-    overflow: hidden;
+    transition: transform .8s ease;
 }
 
 .screen {
@@ -30,9 +34,6 @@ button {
     justify-content: center;
     width: 100%;
     height: 100%;
-}
-.active {
-    transform: translateY(-100%);
 }
 
 .button__start {
