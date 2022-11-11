@@ -4,6 +4,7 @@ const nextButtons = document.querySelectorAll('.next')
 const inputs = document.querySelectorAll('.input')
 const restartButton = document.querySelector('.restart')
 const values = document.querySelectorAll('.value')
+const modal = document.querySelector('.modal')
 
 let activeScreen = 0
 
@@ -25,13 +26,29 @@ function nextScreen() {
     }
 
     const height = slider.clientHeight
+    
+    if (activeScreen === 1) {
+        slider.style.transform = `translateY(-${activeScreen * height}px)`
+    }   else {
+        let value = count()
+        if (value === 0) {
+            modal.classList.add('active')
+            setTimeout(() => {
+                modal.classList.remove('active')
+            }, 1500)
+            return 
+        }   else {
+            slider.style.transform = `translateY(-${activeScreen * height}px)`
 
-    slider.style.transform = `translateY(-${activeScreen * height}px)`
+            values[0].textContent = value + floorPercent(value)
+            values[1].textContent = value
+            values[2].textContent = value - floorPercent(value)
+        }
+    }
+}
 
-    let value = count()
-    values[0].textContent = value + 700
-    values[1].textContent = value
-    values[2].textContent = value - 300
+function floorPercent(number) {
+    return Math.floor(number * 20 / 100)
 }
 
 function count() {
@@ -50,7 +67,12 @@ function count() {
         }
     })
 
+    if (weight === '' && height === '' && age === '') {
+        return 0
+    }
+
     let calorie = 10 * weight + 6.25 * height - 5 * age + 5
+
     return Math.floor(calorie)
 }
 
